@@ -22,17 +22,7 @@ do
   cp ${ITEM} ${USER_DIR}
 done
 
-# cat ${BASE_CONFIG} \
-#   <(echo -e '<ca>') \
-#   ${KEY_DIR}/ca.crt \
-#   <(echo -e '</ca>\n<cert>') \
-#   ${KEY_DIR}/${name}.crt \
-#   <(echo -e '</cert>\n<key>') \
-#   ${KEY_DIR}/${name}.key \
-#   <(echo -e '</key>\n<tls-auth>') \
-#   ${KEY_DIR}/ta.key \
-#   <(echo -e '</tls-auth>') \
-#   > ${OUTPUT_DIR}/${name}.ovpn
+cat ${BASE_CONFIG} > ${OUTPUT_DIR}/${name}.ovpn
 
 TA_VALUE=`cat ${KEY_DIR}/ta.key`
 CA_VALUE=`cat ${KEY_DIR}/ca.crt`
